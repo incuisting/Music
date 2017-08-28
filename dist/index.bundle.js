@@ -69,8 +69,8 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_index_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_scss__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_index_scss__);
 
 
 console.log('aa');
@@ -97,8 +97,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js??ref--1-2!./index.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js??ref--1-2!./index.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -116,7 +116,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, ".hello {\r\n    color: red;\r\n  }", ""]);
+exports.push([module.i, ".hello {\n  color: #333;\n  box-sizing: border-box; }\n", ""]);
 
 // exports
 
