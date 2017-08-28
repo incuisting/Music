@@ -15,7 +15,8 @@ module.exports = {
               test:/\.css$/,
               use:[
                   'style-loader',
-                  'css-loader'
+                  'css-loader',
+                  'postcss-loader'
               ]
           },
           {
@@ -24,7 +25,10 @@ module.exports = {
                 loader: "style-loader"
             }, {
                 loader: "css-loader"
-            }, {
+            },{
+                loader: "postcss-loader"
+            },
+             {
                 loader: "sass-loader",
                 options: {
                     includePaths: ["absolute/path/a", "absolute/path/b"]
