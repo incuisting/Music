@@ -116,7 +116,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "@-webkit-keyframes circle {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes circle {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n.hello {\n  color: #333;\n  box-sizing: border-box;\n  -webkit-animation: circle 20s infinite linear;\n          animation: circle 20s infinite linear; }\n", ""]);
+exports.push([module.i, "@-webkit-keyframes a{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes a{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.hello{color:#333;box-sizing:border-box;-webkit-animation:a 20s infinite linear;animation:a 20s infinite linear}", ""]);
 
 // exports
 
