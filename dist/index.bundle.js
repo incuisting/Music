@@ -516,7 +516,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_reset_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_reset_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_index_scss__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_index_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_index_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 
 
@@ -524,11 +524,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_jquery___default()(function () {
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/songs.json').then(function (response) {
+__WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/songs.json').then(function(response) {
         let items = response
         items.forEach(i => {
-            let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
+            let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
                 `
                 <li>
                 <a href="./song.html?id=${i.id}">
@@ -541,13 +541,83 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default()(function () {
                 </li>
                 `
             )
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastsetMusic').append($li)
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastsetMusic').append($li)
         })
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastestMusicLoading').remove()
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastestMusicLoading').remove()
     })
+
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('click', 'ol.tabItems>li', function(e) {
+        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget).addClass('active')
+        $li.siblings().removeClass('active')
+        let index = $li.index()
+        $li.trigger('tabChange', index)
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
+    })
+
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('tabChange', function(e, index) {
+        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index)
+        if ($li.attr('data-downloaded') === 'yes') {
+            return
+        }
+        if (index === 1) {
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/page2.json').then((response) => {
+                $li.text(response.content)
+                $li.attr('date-downloaded', 'yes')
+            })
+        } else if (index === 2) {
+            return
+        }
+
+    })
+
+    let timer = undefined
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').on('input', function(e) {
+        let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)
+        let value = $input.val().trim()
+        if (value === '') {
+            return
+        }
+        if (timer) {
+            clearTimeout(timer)
+        }
+
+        timer = setTimeout(function() {
+            search(value).then((result) => {
+                timer = undefined
+                if (result.length !== 0) {
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').empty()
+                    let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('<ul></ul>')
+                    result.forEach((item) => {
+                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+                        $li.appendTo($ul)
+                    })
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').append($ul)
+                } else {
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').text('没有结果')
+                }
+            })
+        }, 300)
+
+    })
+
+    function search(keyword) {
+        console.log('搜索' + keyword)
+        return new Promise((resolve, reject) => {
+            var database = [
+                { "id": 1, "name": "那些花儿", },
+                { "id": 2, "name": "情非得已", },
+                { "id": 3, "name": "找自己", },
+            ]
+            let result = database.filter(function(item) {
+                return item.name.indexOf(keyword) >= 0
+            })
+            setTimeout(function() {
+                console.log('搜到' + keyword + '的结果')
+                resolve(result)
+            }, (Math.random() * 200 + 1000))
+        })
+    }
 })
-
-
 
 /***/ }),
 /* 3 */
@@ -774,14 +844,13 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "section>h2:first-child{font-size:4.53vw;border-left:2px solid #d33a31;margin:4vw 0;font-weight:400;padding-left:2.6vw;line-height:1}.topbar{background:#d43c33;padding:4.5vw 2.5vw;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.topbar .logo{width:38vw}.topbar .downLoadApp{line-height:7.5vw;border:1px solid #fff;border-radius:4.25vw;display:block;color:#fff;text-decoration:none;padding:0 .5em}.siteNav ol{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-bottom:1px solid #ccc;font-size:1.1em;text-align:center}.siteNav ol li{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.siteNav ol li.active{color:#d33a31}.siteNav ol li.active span:before{content:\"\";position:absolute;bottom:0;border-bottom:2px solid #d33a31;left:-2vw;right:-2vw}.siteNav ol li span{padding-top:1vw;line-height:10vw;display:inline-block;position:relative}.tabContent>li{display:none}.tabContent>li.active{display:block}.playLists{margin-top:5.5vw}.playLists ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:.93em}.playLists ul img{width:100%}.playLists ul li{width:calc(33.333333% - 1vw);margin-bottom:4vw}.playLists ul li p{padding:0 1vw;display:-webkit-box;line-height:4vw;height:8vw;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}.lastestMusic>p{text-align:center}.lastestMusic ul{padding-left:calc(2.6vw+2px)}.lastestMusic ul li{border-bottom:1px solid #e2e2e3;padding:1vw 0;position:relative}.lastestMusic ul li h3{font-size:4.53vw}", ""]);
+exports.push([module.i, "section>h2:first-child{font-size:4.53vw;border-left:2px solid #d33a31;margin:4vw 0;font-weight:400;padding-left:2.6vw;line-height:1}.topbar{background:#d43c33;padding:4.5vw 2.5vw;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.topbar .logo{width:38vw}.topbar .downLoadApp{line-height:7.5vw;border:1px solid #fff;border-radius:4.25vw;display:block;color:#fff;text-decoration:none;padding:0 .5em}.siteNav ol{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-bottom:1px solid #ccc;font-size:1.1em;text-align:center}.siteNav ol li{width:33.333333333%;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.siteNav ol li.active{color:#d33a31}.siteNav ol li.active span:before{content:\"\";position:absolute;bottom:0;border-bottom:2px solid #d33a31;left:-2vw;right:-2vw}.siteNav ol li span{padding-top:1vw;line-height:10vw;display:inline-block;position:relative}.tabContent>li{display:none}.tabContent>li.active{display:block}.playLists{margin-top:5.5vw}.playLists ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:.93em}.playLists ul img{width:100%}.playLists ul li{width:calc(33.333333% - 1vw);margin-bottom:4vw}.playLists ul li p{padding:0 1vw;display:-webkit-box;line-height:4vw;height:8vw;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}.lastestMusic>p{text-align:center}.lastestMusic ul{padding-left:calc(2.6vw + 2px)}.lastestMusic ul li{border-bottom:1px solid #e2e2e3;padding:1vw 0;position:relative}.lastestMusic ul li h3{font-size:4.53vw}.lastestMusic ul li p{font-size:3.2vw;color:#888;line-height:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.lastestMusic ul li svg.play{width:5.9vw;height:5.9vw;position:absolute;right:4vw;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);fill:#aaa}section.art{background:transparent url(http://s3.music.126.net/m/s/img/recommand_bg_2x.png?d045fafc60e017b653f8065a87496922) no-repeat center 0;padding-top:17.6vw;padding-bottom:5vw}section.art .logo{text-align:center}section.art .logosvg{width:61.7vw}section.art .openApp{display:block;max-width:81.3vw;padding:1vw 0;margin:0 auto;text-align:center;color:#d43c33;border:1px solid;font-size:4.3vw;line-height:8.6vw;border-radius:5.3vw;margin-bottom:1vw;margin-top:3vw}section.art .copyRight{font-size:3.2vw;-webkit-transform:scale(.75);transform:scale(.75);text-align:center;color:#888}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 10 */,
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
