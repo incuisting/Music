@@ -95,3 +95,20 @@ section>h2:first-child{
     }
   }
 }
+
+.lastestMusic{
+  &>p{
+    text-align: center;
+  }
+  ul{
+    padding-left: calc(2.6vw+2px);
+    li{
+      border-bottom: 1px solid #E2E2E3;
+      padding: 1vw 0;
+      position: relative;
+      h3{
+        font-size: 4.53vw;
+      }
+    }
+  }
+}

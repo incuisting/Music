@@ -15,7 +15,7 @@ $(function () {
                 <h3>${i.name}</h3>
                 <p>演唱者-专辑</p>
                 <svg class="play">
-                <use xlink:href="#icon-play-circled"></use>
+                <use xlink:href="#icon-play"></use>
                 </svg>
                 </a>
                 </li>
