@@ -1,3 +1,11 @@
-*{margin: 0;padding: 0;box-sizing: border-box;}
-ol,ul,dl{list-style: none}
-body{margin: 10px;}
+*{margin:0; padding: 0; box-sizing: border-box;}
+*::before, *::after{box-sizing: border-box; }
+ul,ol{list-style: none;}
+h1,h2,h3{font-weight: normal;}
+a{text-decoration: none;color: inherit;}
+html{
+	font-size: 10vw;
+}
+body{
+	font-size: 3.7vw;
+}

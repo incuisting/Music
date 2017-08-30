@@ -1,3 +1,97 @@
-h1{
-  color: red;
+section>h2:first-child{
+	font-size: 4.53vw;
+	border-left: 2px solid #D33A31;
+	margin: 4vw 0;
+	font-weight: normal;
+	padding-left: 2.6vw;
+	line-height: 1;
+}
+
+.topbar{
+  background: #D43C33;
+  padding: 4.5vw 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo{
+    width: 38vw;
+  }
+  .downLoadApp{
+    line-height: 7.5vw;
+    border: 1px solid white; 
+    border-radius: 4.25vw; 
+    display: block; 
+    color: white; 
+    text-decoration: none; 
+    padding: 0 .5em;
+  }
+}
+
+.siteNav{
+  ol{
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+    font-size: 1.1em;
+    text-align: center;
+    li{
+      flex-grow: 1;
+      &.active{
+        color: #D33A31;
+        span{
+          &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            border-bottom: 2px solid #D33A31;
+            left: -2vw;
+            right: -2vw;
+          }
+        }
+      }
+      span{
+        padding-top: 1vw;
+        line-height: 10vw;
+        display: inline-block;
+        position: relative;
+
+      }
+    }
+  }
+}
+
+.tabContent{
+  &>li{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+}
+
+.playLists{
+  margin-top: 5.5vw;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.93em;
+    img{
+      width: 100%;
+    }
+    li{
+      width:calc(33.333333% - 1vw);
+      margin-bottom: 4vw;
+      p{
+        padding: 0 1vw;
+        display: -webkit-box;
+        line-height: 4vw;
+        height: 8vw;
+        -webkit-line-clamp:2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
