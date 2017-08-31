@@ -41,8 +41,8 @@ $(function() {
         }
         if (index === 1) {
             $.get('../../server/page2.json').then((response) => {
-                $li.text(response.content)
                 $li.attr('date-downloaded', 'yes')
+                $('#tab2Loading').remove()
             })
         } else if (index === 2) {
             return
