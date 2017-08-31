@@ -35,9 +35,41 @@ $(function(){
 		$('.icon-play').on('touchstart', function(){
 			audio.play()	
 			$('.disc-container').addClass('playing')
-		})
-    }
+        })
+        setInterval(function(){
+            let seconds = audio.currentTime
+            console.log('seconds',seconds)
+            let munites = ~~(seconds/60)
+            let left= seconds - munites *60
+            let time = `${pad(munites)}:${pad(left)}`
+            let $lines = $('.lines>p')
+            let $whichLine
+            // 判断时间的歌词
+            for(let i=0;i<$lines.length;i++){
+                let currentLineTime = $lines.eq(i).attr('data-time')
+                let nextLineTime =$lines.eq(i+1).attr('data-time')
+                if($lines.eq(i+1).lenth !== 0 && currentLineTime < time &&  nextLineTime > time){
+                    $whichLine = $lines.eq(i)
+                    break
+                }
+            }
+            // 歌词位移
+            if($whichLine){
+                $whichLine.addClass('active').prev().removeClass('active')
+                let top = $whichLine.offset().top
+                let linesTop = $('.lines').offset().top
+                let delta = top - linesTop - $('.lyric').height()/3
+				$('.lines').css('transform', `translateY(-${delta}px)`)
+            }
 
+        },300)
+    }
+    // 垫0
+    function pad(number){
+		return number>=10 ? number + '' : '0' + number
+	}
+
+    // 解析歌词
 	function parseLyric(lyric){
 		let array = lyric.split('\n')
 		let regex = /^\[(.+)\](.*)$/
