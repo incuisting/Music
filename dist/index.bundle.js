@@ -524,11 +524,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
+__WEBPACK_IMPORTED_MODULE_3_jquery___default()(function() {
     __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/songs.json').then(function(response) {
         let items = response
         items.forEach(i => {
-            let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
+            let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
                 `
                 <li>
                 <a href="./song.html?id=${i.id}">
@@ -541,21 +541,21 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
                 </li>
                 `
             )
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastsetMusic').append($li)
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastsetMusic').append($li)
         })
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastestMusicLoading').remove()
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastestMusicLoading').remove()
     })
 
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('click', 'ol.tabItems>li', function(e) {
-        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget).addClass('active')
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.siteNav').on('click', 'ol.tabItems>li', function(e) {
+        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(e.currentTarget).addClass('active')
         $li.siblings().removeClass('active')
         let index = $li.index()
         $li.trigger('tabChange', index)
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
     })
 
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('tabChange', function(e, index) {
-        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index)
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.siteNav').on('tabChange', function(e, index) {
+        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.tabContent > li').eq(index)
         if ($li.attr('data-downloaded') === 'yes') {
             return
         }
@@ -571,8 +571,8 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
     })
 
     let timer = undefined
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').on('input', function(e) {
-        let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('input#searchSong').on('input', function(e) {
+        let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(e.currentTarget)
         let value = $input.val().trim()
         if (value === '') {
             return
@@ -585,15 +585,15 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
             search(value).then((result) => {
                 timer = undefined
                 if (result.length !== 0) {
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').empty()
-                    let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('<ul></ul>')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').empty()
+                    let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('<ul></ul>')
                     result.forEach((item) => {
-                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
                         $li.appendTo($ul)
                     })
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').append($ul)
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').append($ul)
                 } else {
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').text('没有结果')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').text('没有结果')
                 }
             })
         }, 300)

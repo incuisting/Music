@@ -1,1 +1,5 @@
-console.log(1);
+import 'normalize.css'
+import '../css/reset.css'
+import '../css/songs.scss';
+
+import $ from 'jquery';
