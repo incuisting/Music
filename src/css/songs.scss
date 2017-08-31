@@ -33,13 +33,19 @@
 
 .disc-container{
     position: relative;
-    .icon-wrapper{position: absolute; z-index: 1; display: flex; 
-        justify-content: center; align-items: center;
-        border: 1px solid white; height: 20vw; width: 20vw;
-        border-radius: 50%; background: rgba(0,0,0,0.5);
+    .icon-wrapper{
+        position: absolute; 
+        z-index: 1; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        height: 20vw; 
+        width: 20vw;
+        border-radius: 50%; 
+        background: rgba(0,0,0,0.5);
     }
     .icon {
-        width: 10vw; 
+        width: 100%; 
         fill: white;
     }
     .pointer{

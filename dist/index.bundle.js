@@ -531,7 +531,7 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default()(function() {
             let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
                 `
                 <li>
-                <a href="./song.html?id=${i.id}">
+                <a href="./songs.html?id=${i.id}">
                 <h3>${i.name}</h3>
                 <p>演唱者-专辑</p>
                 <svg class="play">
