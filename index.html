@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>网易云音乐</title>
-    <script src="//at.alicdn.com/t/font_399360_4aqgkfosvl56zuxr.js"></script>
+    <script src="//at.alicdn.com/t/font_399360_d8e18ayk752vs4i.js"></script>
     <script src="./dist/index.bundle.js"></script>
 </head>
 
@@ -70,27 +70,33 @@
                 <h2>推荐歌单</h2>
                 <ul>
                     <li>
-                        <img src="http://p1.music.126.net/gscJ-rAKfmj-xzcOwBbeZw==/109951163011046040.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="1">
+                        <img src="http://p1.music.126.net/gscJ-rAKfmj-xzcOwBbeZw==/109951163011046040.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="1">
                         <p>我们美少年很需要女盆友</p>
                     </li>
                     <li>
-                        <img src="http://p1.music.126.net/MzgoIUEwuuDpRJS4hvxHkw==/19240353974733921.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="2">
+                        <img src="http://p1.music.126.net/MzgoIUEwuuDpRJS4hvxHkw==/19240353974733921.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="2">
                         <p>『电音』神级Remix版本背后的优质原作⑨</p>
                     </li>
                     <li>
-                        <img src="http://p1.music.126.net/IyNkFuGIirC7n-bQ7BGAFA==/18862121974700922.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="3">
+                        <img src="http://p1.music.126.net/IyNkFuGIirC7n-bQ7BGAFA==/18862121974700922.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="3">
                         <p>「欧美女声」-飞花尽是侬，不留旧时容</p>
                     </li>
                     <li>
-                        <img src="http://p1.music.126.net/c9p36Vb8tz5kLrXrx2HAmA==/18874216602438730.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="4">
+                        <img src="http://p1.music.126.net/c9p36Vb8tz5kLrXrx2HAmA==/18874216602438730.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="4">
                         <p>「满分鼓手」激情碰撞 震撼回响</p>
                     </li>
                     <li>
-                        <img src="http://p1.music.126.net/GqoqOfR_yQzMpvC2U7Iv-Q==/18583945534484475.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="5">
+                        <img src="http://p1.music.126.net/GqoqOfR_yQzMpvC2U7Iv-Q==/18583945534484475.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="5">
                         <p>抒情摇滚 · 骨子里的温柔与呐喊</p>
                     </li>
                     <li>
-                        <img src="http://p1.music.126.net/Y3rXiAWKw75VUjvMBQsxUA==/1424967077460786.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="6">
+                        <img src="http://p1.music.126.net/Y3rXiAWKw75VUjvMBQsxUA==/1424967077460786.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp"
+                            alt="6">
                         <p>前奏直接秒杀的纯音乐</p>
                     </li>
                 </ul>
@@ -259,8 +265,6 @@
                         </li>
 
                     </ul>
-
-
                 </div>
                 <div class="complete-list">
                     <span>查看完整榜单 ></span>
@@ -269,7 +273,33 @@
 
         </li>
         <li>
-            <input id="searchSong" type="text" style="border: 1px solid red;">
+            <section class="search">
+                <form class="search-form" action="get">
+                    <div class="search-input">
+                        <svg class="search">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
+                        <input id="searchSong" placeholder="搜索歌曲，歌手，专辑" type="text">
+                        <svg class="close">
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </div>
+                </form>
+                <div class="hot-search">
+                    <p>热门搜索</p>
+                    <ul>
+                        <li><a href="#">那年花开月正圆</a></li>
+                        <li><a href="#">Maroon 5</a></li>
+                        <li><a href="#">BLACKPINK</a></li>
+                        <li><a href="#">OUR TWENTY FOR (Japanese Ver.)</a></li>
+                        <li><a href="#">Jony J</a></li>
+                    </ul>
+                </div>
+                <div class="search-history">
+
+                </div>
+            </section>
+
             <div id="output"></div>
         </li>
     </ul>
