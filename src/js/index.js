@@ -46,30 +46,32 @@ $(function() {
                                         items.forEach(item => {
                                                     let $li = $(
                                                             `
-                        <li>
-                        <a href="./songs.html?id=${item.id}">
-                        <h2 class="hot-num">${item.num}</h2>
-                        <div class="item-body">
-                        <h3>${item.name}</h3>
-                        <p>${item.sq?`<svg class="sq"><use xlink:href="#icon-sq"></use></svg>`:''}
-                        ${item.singer}-${item.ablum}
-                        </p>
-                        <svg class="play">
-                        <use xlink:href="#icon-play"></use>
-                        </svg>
-                        </div>
-                        </a>
-                        </li>
-                    `
-                    )
-                    $('#hotMusic').append($li)
-                })
-            $('#tab2Loading').remove()
-            $('.hot-music>.hot-top').addClass('active')
-        })
-    } else if (index === 2) {
-        return
-    }
+                                <li>
+                                <a href="./songs.html?id=${item.id}">
+                                <h2 class="hot-num">${item.num}</h2>
+                                <div class="item-body">
+                                <h3>${item.name}</h3>
+                                <div class="singer-album">${item.sq?`<svg class="sq"><use xlink:href="#icon-sq"></use></svg>`:''}
+                                <p>
+                                ${item.singer}-${item.album}
+                                </p>
+                                </div>
+                                <svg class="play">
+                                <use xlink:href="#icon-play"></use>
+                                </svg>
+                                </div>
+                                </a>
+                                </li>
+                            `
+                            )
+                            $('#hotMusic').append($li)
+                        })
+                    $('#tab2Loading').remove()
+                    $('.hot-music>.hot-top').addClass('active')
+            })
+        } else if (index === 2) {
+            return
+        }
 
     })
 
