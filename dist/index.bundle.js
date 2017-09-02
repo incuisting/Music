@@ -11073,12 +11073,23 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
                     __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>ul').empty()
                     let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('<ul></ul>')
                     result.forEach((item) => {
-                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
+                            `
+                            <li>
+                            <a href="/songs.html?id=${item.id}">
+                            <svg class="search">
+                            <use xlink:href="#icon-search"></use>
+                            </svg>
+                            <p>
+                            ${item.name}
+                            </p>
+                            </a>
+                            </li>`)
                         $li.appendTo($ul)
                     })
                     $ul.appendTo(__WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output'))
                 } else {
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>li').text('没有结果')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>p').text('没有结果')
                 }
             })
         }, 300)

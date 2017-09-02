@@ -108,12 +108,23 @@ $(function() {
                     $('#output>ul').empty()
                     let $ul = $('<ul></ul>')
                     result.forEach((item) => {
-                        let $li = $(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
+                        let $li = $(
+                            `
+                            <li>
+                            <a href="/songs.html?id=${item.id}">
+                            <svg class="search">
+                            <use xlink:href="#icon-search"></use>
+                            </svg>
+                            <p>
+                            ${item.name}
+                            </p>
+                            </a>
+                            </li>`)
                         $li.appendTo($ul)
                     })
                     $ul.appendTo($('#output'))
                 } else {
-                    $('#output>li').text('没有结果')
+                    $('#output>p').text('没有结果')
                 }
             })
         }, 300)
