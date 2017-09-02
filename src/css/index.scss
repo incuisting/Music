@@ -283,6 +283,7 @@ section.hot-music {
 }
 
 section.search {
+    position: relative;
     .search-form {
         margin: 4vw 2.67vw;
         background: #ebecec;
@@ -297,6 +298,9 @@ section.search {
                 height: 4.13vw;
                 margin: 0 7px;
                 fill: rgba(51, 51, 51, 0.3);
+            }
+            .close {
+                visibility: hidden;
             }
             #searchSong {
                 flex-grow: 1;
@@ -367,6 +371,45 @@ section.search {
                     padding-left: 1vw;
                     color: #333;
                     font-size: 14px;
+                }
+            }
+        }
+    }
+    .hot-search.hidden,
+    .search-history.hidden {
+        display: none;
+    }
+}
+
+#output {
+    h3 {
+        font-size: 4vw;
+        padding: 4.4vw 2.67vw;
+        color: #507daf;
+        border-bottom: 0.26vw solid rgba(0, 0, 0, .1);
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    ul {
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                min-height: 12vw;
+                padding-left: 2.6667vw;
+                svg.search {
+                    width: 4vw;
+                    height: 4vw;
+                    margin-right: 1.8667vw;
+                }
+                p {
+                    flex-grow: 1;
+                    border-bottom: 0.26vw solid rgba(0, 0, 0, .1);
+                    font-size: 4vw;
+                    line-height: 12vw;
+                    color: #333;
                 }
             }
         }

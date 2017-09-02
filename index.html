@@ -61,7 +61,7 @@
         <ol class="tabItems">
             <li class="active"><span>推荐音乐</span></li>
             <li><span>热歌榜</span></li>
-            <li><span>搜素</span></li>
+            <li><span>搜索</span></li>
         </ol>
     </nav>
     <ul class="tabContent">
@@ -171,7 +171,7 @@
         </li>
         <li>
             <section class="search">
-                <form class="search-form" action="get">
+                <form class="search-form" action="#">
                     <div class="search-input">
                         <svg class="search">
                             <use xlink:href="#icon-search"></use>
@@ -182,7 +182,7 @@
                         </svg>
                     </div>
                 </form>
-                <div class="hot-search">
+                <div class="hot-search hidden">
                     <p>热门搜索</p>
                     <ul>
                         <li><a href="#">那年花开月正圆</a></li>
@@ -192,7 +192,7 @@
                         <li><a href="#">Jony J</a></li>
                     </ul>
                 </div>
-                <div class="search-history">
+                <div class="search-history hidden">
                     <ul>
                         <li>
                             <a href="#">
@@ -251,7 +251,21 @@
                 </div>
             </section>
 
-            <div id="output"></div>
+            <div id="output">
+                <h3></h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <svg class="search">
+                                <use xlink:href="#icon-search"></use>
+                            </svg>
+                            <p>
+                                情非得以
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>
     </ul>
 

@@ -79,9 +79,12 @@ $(function() {
     $('input#searchSong').on('input', function(e) {
         let $input = $(e.currentTarget)
         let value = $input.val().trim()
+        $('#output>h3').addClass('active').text(`搜索"${value}"`)
         if (value === '') {
+            $('.search-input>.close').css({"visibility":"hidden"})
             return
         }
+        $('.search-input>.close').css({"visibility":"visible"})
         if (timer) {
             clearTimeout(timer)
         }
@@ -90,15 +93,15 @@ $(function() {
             search(value).then((result) => {
                 timer = undefined
                 if (result.length !== 0) {
-                    $('#output').empty()
+                    $('#output>ul').empty()
                     let $ul = $('<ul></ul>')
                     result.forEach((item) => {
                         let $li = $(`<li><a href="/song.html?id=${item.id}">${item.name}</a></li>`)
                         $li.appendTo($ul)
                     })
-                    $('#output').append($ul)
+                    $ul.appendTo($('#output'))
                 } else {
-                    $('#output').text('没有结果')
+                    $('#output>li').text('没有结果')
                 }
             })
         }, 300)
@@ -112,6 +115,10 @@ $(function() {
                 { "id": 1, "name": "那些花儿", },
                 { "id": 2, "name": "情非得已", },
                 { "id": 3, "name": "找自己", },
+                { "id": 2, "name": "情非得已1", },
+                { "id": 2, "name": "情非得已2", },
+                { "id": 2, "name": "情非得已3", },
+                { "id": 2, "name": "情非得已", }
             ]
             let result = database.filter(function(item) {
                 return item.name.indexOf(keyword) >= 0
