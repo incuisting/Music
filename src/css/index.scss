@@ -161,11 +161,15 @@ section.art {
     }
 }
 
+#tab2Loading {
+    text-align: center;
+}
+
 section.hot-music {
     .hot-top {
         position: relative;
         background: transparent url('//s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee') no-repeat;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         min-height: 39vw;
@@ -199,6 +203,9 @@ section.hot-music {
             transform: scale(.91);
             transform-origin: left top;
             color: #fff;
+        }
+        &.active {
+            display: flex;
         }
     }
     .hot-content {

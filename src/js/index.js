@@ -5,49 +5,71 @@ import '../css/index.scss';
 import $ from 'jquery';
 
 $(function() {
-    $.get('../../server/songs.json').then(function(response) {
-        let items = response
-        items.forEach(i => {
-            let $li = $(
-                `
-                <li>
-                <a href="./songs.html?id=${i.id}">
-                <h3>${i.name}</h3>
-                <p>演唱者-专辑</p>
-                <svg class="play">
-                <use xlink:href="#icon-play"></use>
-                </svg>
-                </a>
-                </li>
-                `
-            )
-            $('#lastsetMusic').append($li)
-        })
-        $('#lastestMusicLoading').remove()
-    })
-
-    $('.siteNav').on('click', 'ol.tabItems>li', function(e) {
-        let $li = $(e.currentTarget).addClass('active')
-        $li.siblings().removeClass('active')
-        let index = $li.index()
-        $li.trigger('tabChange', index)
-        $('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
-    })
-
-    $('.siteNav').on('tabChange', function(e, index) {
-        let $li = $('.tabContent > li').eq(index)
-        if ($li.attr('data-downloaded') === 'yes') {
-            return
-        }
-        if (index === 1) {
-            $.get('../../server/hot-music.json').then((response) => {
-                $li.attr('date-downloaded', 'yes')
-                console.log('response', response)
-                $('#tab2Loading').remove()
+            $.get('../../server/songs.json').then(function(response) {
+                let items = response
+                items.forEach(i => {
+                    let $li = $(
+                        `
+            <li>
+            <a href="./songs.html?id=${i.id}">
+            <h3>${i.name}</h3>
+            <p>演唱者-专辑</p>
+            <svg class="play">
+            <use xlink:href="#icon-play"></use>
+            </svg>
+            </a>
+            </li>
+            `
+                    )
+                    $('#lastsetMusic').append($li)
+                })
+                $('#lastestMusicLoading').remove()
             })
-        } else if (index === 2) {
-            return
-        }
+
+            $('.siteNav').on('click', 'ol.tabItems>li', function(e) {
+                let $li = $(e.currentTarget).addClass('active')
+                $li.siblings().removeClass('active')
+                let index = $li.index()
+                $li.trigger('tabChange', index)
+                $('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
+            })
+
+            $('.siteNav').on('tabChange', function(e, index) {
+                        let $li = $('.tabContent > li').eq(index)
+                        if ($li.attr('data-downloaded') === 'yes') {
+                            return
+                        }
+                        if (index === 1) {
+                            $.get('../../server/hot-music.json').then((response) => {
+                                        $li.attr('date-downloaded', 'yes')
+                                        let items = response
+                                        items.forEach(item => {
+                                                    let $li = $(
+                                                            `
+                        <li>
+                        <a href="./songs.html?id=${item.id}">
+                        <h2 class="hot-num">${item.num}</h2>
+                        <div class="item-body">
+                        <h3>${item.name}</h3>
+                        <p>${item.sq?`<svg class="sq"><use xlink:href="#icon-sq"></use></svg>`:''}
+                        ${item.singer}-${item.ablum}
+                        </p>
+                        <svg class="play">
+                        <use xlink:href="#icon-play"></use>
+                        </svg>
+                        </div>
+                        </a>
+                        </li>
+                    `
+                    )
+                    $('#hotMusic').append($li)
+                })
+            $('#tab2Loading').remove()
+            $('.hot-music>.hot-top').addClass('active')
+        })
+    } else if (index === 2) {
+        return
+    }
 
     })
 
