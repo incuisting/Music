@@ -74,14 +74,26 @@ $(function() {
         }
 
     })
-
+    $('.search-input>.close').on('click',function(){
+        $('input#searchSong').val('')
+        $('.search>.hot-search').removeClass('hidden')
+        $('.search>.search-history').removeClass('hidden')
+        $('.search-input>.close').css({"visibility":"hidden"})
+        $('#output').removeClass('active')
+    })
     let timer = undefined
     $('input#searchSong').on('input', function(e) {
         let $input = $(e.currentTarget)
         let value = $input.val().trim()
+        $('.search>.hot-search').addClass('hidden')
+        $('.search>.search-history').addClass('hidden')
+        $('#output').addClass('active')
         $('#output>h3').addClass('active').text(`搜索"${value}"`)
         if (value === '') {
             $('.search-input>.close').css({"visibility":"hidden"})
+            $('.search>.hot-search').removeClass('hidden')
+            $('.search>.search-history').removeClass('hidden')
+            $('#output').removeClass('active')        
             return
         }
         $('.search-input>.close').css({"visibility":"visible"})

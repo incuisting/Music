@@ -382,6 +382,7 @@ section.search {
 }
 
 #output {
+    display: none;
     h3 {
         font-size: 4vw;
         padding: 4.4vw 2.67vw;
@@ -413,5 +414,8 @@ section.search {
                 }
             }
         }
+    }
+    &.active {
+        display: block;
     }
 }
