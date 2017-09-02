@@ -40,8 +40,9 @@ $(function() {
             return
         }
         if (index === 1) {
-            $.get('../../server/page2.json').then((response) => {
+            $.get('../../server/hot-music.json').then((response) => {
                 $li.attr('date-downloaded', 'yes')
+                console.log('response', response)
                 $('#tab2Loading').remove()
             })
         } else if (index === 2) {

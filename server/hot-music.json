@@ -1,0 +1,161 @@
+[{
+        "num": "01",
+        "id": 1,
+        "name": "Look What You Made Me Do",
+        "singer": "Taylor Swift",
+        "album": "Look What You Made Me Do",
+        "sq": true
+    },
+    {
+        "num": "02",
+        "id": 2,
+        "name": "远走高飞",
+        "singer": "金志文",
+        "album": "Hello 1",
+        "sq": true
+    },
+    {
+        "num": "03",
+        "id": 3,
+        "name": "追光者",
+        "singer": "岑宁儿",
+        "album": "夏至未至 影视原声带",
+        "sq": true
+    },
+    {
+        "num": "04",
+        "id": 4,
+        "name": "What Lovers Do",
+        "singer": "Maroon 5 / SZA",
+        "album": "What Lovers Do",
+        "sq": true
+    },
+    {
+        "num": "05",
+        "id": 5,
+        "name": "非酋",
+        "singer": "薛明媛 / 朱贺",
+        "album": "非酋",
+        "sq": true
+    },
+    {
+        "num": "06",
+        "id": 6,
+        "name": "再也没有",
+        "singer": "Ryan.B / AY楊佬叁",
+        "album": "再也没有",
+        "sq": true
+    },
+    {
+        "num": "07",
+        "id": 7,
+        "name": "全部都是你",
+        "singer": "Dragon Pig / CNBALLER / CLOUD WANG",
+        "album": "全部都是你",
+        "sq": true
+    },
+    {
+        "num": "08",
+        "id": 8,
+        "name": "带你去旅行",
+        "singer": "校长",
+        "album": "带你去旅行",
+        "sq": true
+    },
+    {
+        "num": "09",
+        "id": 9,
+        "name": "童话镇",
+        "singer": "陈一发儿",
+        "album": "童话镇",
+        "sq": true
+    },
+    {
+        "num": "10",
+        "id": 10,
+        "name": "Despacito (Remix)",
+        "singer": "Luis Fonsi / Daddy Yankee / Justin Bieber",
+        "album": "Despacito (Remix)",
+        "sq": true
+    },
+    {
+        "num": "11",
+        "id": 11,
+        "name": "成都",
+        "singer": "赵雷",
+        "album": "成都",
+        "sq": false
+    },
+    {
+        "num": "12",
+        "id": 12,
+        "name": "老大",
+        "singer": "Bridge",
+        "album": "老大",
+        "sq": false
+    },
+    {
+        "num": "13",
+        "id": 13,
+        "name": "尽头",
+        "singer": "赵方婧",
+        "album": "音阙诗听",
+        "sq": true
+    },
+    {
+        "num": "14",
+        "id": 14,
+        "name": "暧昧",
+        "singer": "薛之谦",
+        "album": "暧昧",
+        "sq": true
+    },
+    {
+        "num": "15",
+        "id": 15,
+        "name": "九张机",
+        "singer": "叶炫清",
+        "album": "九张机",
+        "sq": true
+    },
+    {
+        "num": "16",
+        "id": 16,
+        "name": "在人间",
+        "singer": "王建房",
+        "album": "长安夜",
+        "sq": false
+    },
+    {
+        "num": "17",
+        "id": 17,
+        "name": "Shape of You",
+        "singer": "Ed Sheeran",
+        "album": "Shape Of You",
+        "sq": true
+    },
+    {
+        "num": "18",
+        "id": 18,
+        "name": "告白气球",
+        "singer": "周杰伦",
+        "album": "周杰伦的床边故事",
+        "sq": true
+    },
+    {
+        "num": "19",
+        "id": 19,
+        "name": "刚好遇见你",
+        "singer": "李玉刚",
+        "album": "刚好遇见你",
+        "sq": true
+    },
+    {
+        "num": "20",
+        "id": 20,
+        "name": "I Am You",
+        "singer": "Kim Taylor",
+        "album": "I Am You",
+        "sq": false
+    }
+]
