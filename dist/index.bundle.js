@@ -11039,6 +11039,7 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
         }
 
     })
+    // 搜素框点击后的界面切换
     __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').on('click',function(){
         __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').val('')
         __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.hot-search').removeClass('hidden')
@@ -11046,6 +11047,16 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
         __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').css({"visibility":"hidden"})
         __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').removeClass('active')
     })
+
+    // 移除历史搜索
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-history>ul').on('click','svg',function(e){
+        let current = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)
+        let currentClassName = current.attr('class')
+        if(currentClassName === 'close1'){            
+            current.parents('li')[0].remove()
+        }
+    })
+
     let timer = undefined
     __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').on('input', function(e) {
         let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)

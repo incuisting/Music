@@ -74,6 +74,7 @@ $(function() {
         }
 
     })
+    // 搜素框点击后的界面切换
     $('.search-input>.close').on('click',function(){
         $('input#searchSong').val('')
         $('.search>.hot-search').removeClass('hidden')
@@ -81,6 +82,16 @@ $(function() {
         $('.search-input>.close').css({"visibility":"hidden"})
         $('#output').removeClass('active')
     })
+
+    // 移除历史搜索
+    $('.search-history>ul').on('click','svg',function(e){
+        let current = $(e.currentTarget)
+        let currentClassName = current.attr('class')
+        if(currentClassName === 'close1'){            
+            current.parents('li')[0].remove()
+        }
+    })
+
     let timer = undefined
     $('input#searchSong').on('input', function(e) {
         let $input = $(e.currentTarget)
