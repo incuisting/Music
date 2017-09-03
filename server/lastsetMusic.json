@@ -1,0 +1,85 @@
+[{
+        "id": 5,
+        "name": "非酋",
+        "singer": "薛明媛 / 朱贺",
+        "album": "非酋",
+        "sq": true
+    },
+    {
+        "id": 6,
+        "name": "再也没有",
+        "singer": "Ryan.B / AY楊佬叁",
+        "album": "再也没有",
+        "sq": true
+    },
+    {
+        "id": 7,
+        "name": "全部都是你",
+        "singer": "Dragon Pig / CNBALLER / CLOUD WANG",
+        "album": "全部都是你",
+        "sq": true
+    },
+    {
+        "id": 8,
+        "name": "带你去旅行",
+        "singer": "校长",
+        "album": "带你去旅行",
+        "sq": true
+    },
+    {
+        "id": 9,
+        "name": "童话镇",
+        "singer": "陈一发儿",
+        "album": "童话镇",
+        "sq": true
+    },
+    {
+        "id": 10,
+        "name": "Despacito (Remix)",
+        "singer": "Luis Fonsi / Daddy Yankee / Justin Bieber",
+        "album": "Despacito (Remix)",
+        "sq": true
+    },
+    {
+        "id": 11,
+        "name": "成都",
+        "singer": "赵雷",
+        "album": "成都",
+        "sq": false
+    },
+    {
+        "id": 12,
+        "name": "老大",
+        "singer": "Bridge",
+        "album": "老大",
+        "sq": false
+    },
+    {
+        "id": 13,
+        "name": "尽头",
+        "singer": "赵方婧",
+        "album": "音阙诗听",
+        "sq": true
+    },
+    {
+        "id": 14,
+        "name": "暧昧",
+        "singer": "薛之谦",
+        "album": "暧昧",
+        "sq": true
+    },
+    {
+        "id": 15,
+        "name": "九张机",
+        "singer": "叶炫清",
+        "album": "九张机",
+        "sq": true
+    },
+    {
+        "id": 16,
+        "name": "在人间",
+        "singer": "王建房",
+        "album": "长安夜",
+        "sq": false
+    }
+]

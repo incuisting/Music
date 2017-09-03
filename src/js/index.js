@@ -5,7 +5,7 @@ import '../css/index.scss';
 import $ from 'jquery';
 
 $(function() {
-            $.get('../../server/songs.json').then(function(response) {
+            $.get('../../server/lastsetMusic.json').then(function(response) {
                 let items = response
                 items.forEach(i => {
                     let $li = $(
@@ -13,7 +13,7 @@ $(function() {
             <li>
             <a href="./songs.html?id=${i.id}">
             <h3>${i.name}</h3>
-            <p>演唱者-专辑</p>
+            <p>${i.singer}-${i.album}</p>
             <svg class="play">
             <use xlink:href="#icon-play"></use>
             </svg>
