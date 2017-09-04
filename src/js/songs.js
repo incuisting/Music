@@ -6,15 +6,19 @@ import $ from 'jquery';
 
 $(function() {
     let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10)
-
     $.get('../../server/songs.json').then(function(response) {
+        console.log(response)
         let songs = response
         let song = songs.filter(item => item.id === id)[0]
         let { url, name, lyric, cover, background } = song
 
+        console.log('name',name)
+
         initCover.call(null, cover, background)
         initPlayer.call(null, url)
         initText(name, lyric)
+    },function(err){
+        console.log('err',err)
     })
 
     function initCover(cover, background) {
