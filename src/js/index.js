@@ -5,7 +5,7 @@ import '../css/index.scss';
 import $ from 'jquery';
 
 $(function() {
-            $.get('../../server/lastsetMusic.json').then(function(response) {
+            $.get('./server/lastsetMusic.json').then(function(response) {
                 let items = response
                 items.forEach(i => {
                     let $li = $(

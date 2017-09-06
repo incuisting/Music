@@ -10970,7 +10970,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/lastsetMusic.json').then(function(response) {
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('./server/lastsetMusic.json').then(function(response) {
                 let items = response
                 items.forEach(i => {
                     let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(

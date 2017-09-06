@@ -10974,19 +10974,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
     let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10)
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('../../server/songs.json').then(function(response) {
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('./server/songs.json').then(function(response) {
         console.log(response)
         let songs = response
         let song = songs.filter(item => item.id === id)[0]
         let { url, name, lyric, cover, background } = song
 
-        console.log('name',name)
+        console.log('name', name)
 
         initCover.call(null, cover, background)
         initPlayer.call(null, url)
         initText(name, lyric)
-    },function(err){
-        console.log('err',err)
+    }, function(err) {
+        console.log('err', err)
     })
 
     function initCover(cover, background) {
