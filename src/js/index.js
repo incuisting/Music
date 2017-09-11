@@ -40,7 +40,7 @@ $(function() {
                             return
                         }
                         if (index === 1) {
-                            $.get('../../server/hot-music.json').then((response) => {
+                            $.get('./server/hot-music.json').then((response) => {
                                         $li.attr('date-downloaded', 'yes')
                                         let items = response
                                         items.forEach(item => {
@@ -146,13 +146,86 @@ $(function() {
         console.log('搜索' + keyword)
         return new Promise((resolve, reject) => {
             var database = [
-                { "id": 1, "name": "那些花儿", },
-                { "id": 2, "name": "情非得已", },
-                { "id": 3, "name": "找自己", },
-                { "id": 2, "name": "情非得已1", },
-                { "id": 2, "name": "情非得已2", },
-                { "id": 2, "name": "情非得已3", },
-                { "id": 2, "name": "情非得已", }
+                {
+                    "id": 1,
+                    "name": "Look What You Made Me Do"
+                },
+                {
+                    "id": 2,
+                    "name": "远走高飞"
+                },
+                {
+                    "id": 3,
+                    "name": "追光者"
+                },
+                {
+                    "id": 4,
+                    "name": "What Lovers Do"
+                },
+                {
+                    "id": 5,
+                    "name": "非酋"
+                },
+                {
+                    "id": 6,
+                    "name": "再也没有"
+                },
+                {
+                    "id": 7,
+                    "name": "全部都是你"
+                },
+                {
+                    "id": 8,
+                    "name": "带你去旅行"
+                },
+                {
+                    "id": 9,
+                    "name": "童话镇"
+                },
+                {
+                    "id": 10,
+                    "name": "Despacito (Remix)"
+                },
+                {
+                    "id": 11,
+                    "name": "成都"
+                },
+                {
+                    "id": 12,
+                    "name": "老大"
+                },
+                {
+                    "id": 13,
+                    "name": "尽头"
+                },
+                {
+                    "id": 14,
+                    "name": "暧昧"
+                },
+                {
+                    "id": 15,
+                    "name": "九张机"
+                },
+                {
+                    "id": 16,
+                    "name": "在人间"
+                },
+                {
+                    "id": 17,
+                    "name": "Shape of You"
+                },
+                {
+                    "id": 18,
+                    "name": "告白气球"
+                },
+                {
+                    "id": 19,
+                    "name": "刚好遇见你"
+                },
+                {
+                    "id": 20,
+                    "name": "I Am You"
+                }
             ]
             let result = database.filter(function(item) {
                 return item.name.indexOf(keyword) >= 0

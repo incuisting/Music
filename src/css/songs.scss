@@ -41,6 +41,8 @@
     position: relative;
     .icon-wrapper {
         position: absolute;
+        top: 44vw;
+        left: 40vw;
         z-index: 1;
         display: flex;
         justify-content: center;
@@ -75,6 +77,8 @@
     .cover {
         width: 44.5vw;
         position: absolute;
+        top: 31.9vw;
+        left: 27.75vw;
         border-radius: 50%;
         animation: circle 20s infinite linear;
         animation-play-state: paused;
