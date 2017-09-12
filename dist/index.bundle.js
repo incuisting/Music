@@ -10969,11 +10969,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
+__WEBPACK_IMPORTED_MODULE_3_jquery___default()(function() {
             __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.get('./server/lastsetMusic.json').then(function(response) {
                 let items = response
                 items.forEach(i => {
-                    let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
+                    let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
                         `
             <li>
             <a href="./songs.html?id=${i.id}">
@@ -10986,21 +10986,21 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
             </li>
             `
                     )
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastsetMusic').append($li)
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastsetMusic').append($li)
                 })
-                __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#lastestMusicLoading').remove()
+                __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#lastestMusicLoading').remove()
             })
 
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('click', 'ol.tabItems>li', function(e) {
-                let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget).addClass('active')
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.siteNav').on('click', 'ol.tabItems>li', function(e) {
+                let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(e.currentTarget).addClass('active')
                 $li.siblings().removeClass('active')
                 let index = $li.index()
                 $li.trigger('tabChange', index)
-                __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
+                __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.tabContent > li').eq(index).addClass('active').siblings().removeClass('active')
             })
 
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.siteNav').on('tabChange', function(e, index) {
-                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.tabContent > li').eq(index)
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.siteNav').on('tabChange', function(e, index) {
+                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.tabContent > li').eq(index)
                         if ($li.attr('data-downloaded') === 'yes') {
                             return
                         }
@@ -11009,7 +11009,7 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
                                         $li.attr('date-downloaded', 'yes')
                                         let items = response
                                         items.forEach(item => {
-                                                    let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
+                                                    let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
                                                             `
                                 <li>
                                 <a href="./songs.html?id=${item.id}">
@@ -11029,10 +11029,10 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
                                 </li>
                             `
                             )
-                            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#hotMusic').append($li)
+                            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#hotMusic').append($li)
                         })
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#tab2Loading').remove()
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.hot-music>.hot-top').addClass('active')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#tab2Loading').remove()
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.hot-music>.hot-top').addClass('active')
             })
         } else if (index === 2) {
             return
@@ -11040,17 +11040,17 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
 
     })
     // 搜素框点击后的界面切换
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').on('click',function(){
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').val('')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.hot-search').removeClass('hidden')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.search-history').removeClass('hidden')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').css({"visibility":"hidden"})
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search-input>.close').on('click',function(){
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('input#searchSong').val('')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.hot-search').removeClass('hidden')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.search-history').removeClass('hidden')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search-input>.close').css({"visibility":"hidden"})
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').removeClass('active')
     })
 
     // 移除历史搜索
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-history>ul').on('click','svg',function(e){
-        let current = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search-history>ul').on('click','svg',function(e){
+        let current = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(e.currentTarget)
         let currentClassName = current.attr('class')
         if(currentClassName === 'close1'){            
             current.parents('li')[0].remove()
@@ -11058,21 +11058,21 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
     })
 
     let timer = undefined
-    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('input#searchSong').on('input', function(e) {
-        let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(e.currentTarget)
+    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('input#searchSong').on('input', function(e) {
+        let $input = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(e.currentTarget)
         let value = $input.val().trim()
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.hot-search').addClass('hidden')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.search-history').addClass('hidden')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').addClass('active')
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>h3').addClass('active').text(`搜索"${value}"`)
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.hot-search').addClass('hidden')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.search-history').addClass('hidden')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').addClass('active')
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output>h3').addClass('active').text(`搜索"${value}"`)
         if (value === '') {
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').css({"visibility":"hidden"})
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.hot-search').removeClass('hidden')
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search>.search-history').removeClass('hidden')
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output').removeClass('active')        
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search-input>.close').css({"visibility":"hidden"})
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.hot-search').removeClass('hidden')
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search>.search-history').removeClass('hidden')
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output').removeClass('active')        
             return
         }
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('.search-input>.close').css({"visibility":"visible"})
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.search-input>.close').css({"visibility":"visible"})
         if (timer) {
             clearTimeout(timer)
         }
@@ -11081,10 +11081,10 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
             search(value).then((result) => {
                 timer = undefined
                 if (result.length !== 0) {
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>ul').empty()
-                    let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('<ul></ul>')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output>ul').empty()
+                    let $ul = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('<ul></ul>')
                     result.forEach((item) => {
-                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(
+                        let $li = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(
                             `
                             <li>
                             <a href="/songs.html?id=${item.id}">
@@ -11098,9 +11098,9 @@ __WEBPACK_IMPORTED_MODULE_3_jquery___default.a(function() {
                             </li>`)
                         $li.appendTo($ul)
                     })
-                    $ul.appendTo(__WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output'))
+                    $ul.appendTo(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output'))
                 } else {
-                    __WEBPACK_IMPORTED_MODULE_3_jquery___default.a('#output>p').text('没有结果')
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#output>p').text('没有结果')
                 }
             })
         }, 300)
